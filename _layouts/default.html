@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="badge">GM</div>
+        <div>
+          <h1 class="title">{{ site.title }}</h1>
+          <p class="subtitle">{{ site.description }}</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        {% for item in site.data.nav %}
+          {% assign is_active = false %}
+          {% if page.url == item.url %}{% assign is_active = true %}{% endif %}
+          <a class="nav-link{% if is_active %} active{% endif %}" href="{{ item.url | relative_url }}">
+            <span class="dot"></span>{{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+
+      <div class="footer-note">
+        Actualizado: {{ site.time | date: "%Y-%m-%d" }}
+      </div>
+    </aside>
+
+    <main>
+      <div class="panel">
+        <article class="content">
+          {{ content }}
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

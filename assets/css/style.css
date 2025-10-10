@@ -1,0 +1,154 @@
+:root {
+  --bg: #ffffff;
+  --text: #1b1f24;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --border: #e5e7eb;
+  --card: #f8fafc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f13;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #38bdf8;
+    --border: #111827;
+    --card: #0f172a;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  background: linear-gradient(180deg, var(--bg), var(--card));
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.title {
+  font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+}
+
+.nav {
+  margin-top: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .2s ease;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+}
+
+.nav-link .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border);
+  flex: 0 0 auto;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.nav-link:hover { background: color-mix(in oklab, var(--accent) 6%, transparent); }
+.nav-link:hover .dot { background: var(--accent); transform: scale(1.15); }
+.nav-link.active { border-color: color-mix(in oklab, var(--accent) 50%, var(--border)); background: color-mix(in oklab, var(--accent) 10%, transparent); }
+.nav-link.active .dot { background: var(--accent); }
+
+.footer-note {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Main */
+main { padding: 32px; }
+
+.panel {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+h1, h2, h3 {
+  font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+  letter-spacing: 0.2px;
+  margin-top: 0;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 20px; color: var(--muted); font-weight: 600; }
+
+.content p { margin: 0 0 1rem 0; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  main { padding: 20px; }
+  .panel { padding: 20px; border-radius: 16px; }
+}

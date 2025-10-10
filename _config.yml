@@ -1,3 +1,17 @@
-theme: jekyll-theme-minimal
-title: Germán Molpeceres
-description: Molecular Astrophysics
+title: "Germán Molpeceres"
+description: "Astrochemistry, Quantum Chemistry, ML"
+baseurl: ""
+url: "https://<tu-usuario>.github.io"
+
+markdown: kramdown
+sass:
+  style: compressed
+
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+plugins: []
