@@ -8,5 +8,4 @@ permalink: "/cv/"
 
 - Molecular Astrophysicist & Astrochemist
 
-
 [📄 Download CV (PDF)]({{ '/assets/CV.pdf' | relative_url }}){: .btn }
