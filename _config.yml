@@ -1,7 +1,7 @@
 title: "Germán Molpeceres"
-description: "Astrochemistry, Quantum Chemistry, ML"
+description: "Molecular Astrophysics, Astrochemistry"
 baseurl: ""
-url: "https://<tu-usuario>.github.io"
+url: "https://gmolpeceres.github.io"
 
 markdown: kramdown
 sass:
