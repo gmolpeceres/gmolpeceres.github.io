@@ -6,5 +6,7 @@ permalink: "/cv/"
 
 # CV
 
-- ERC Starting Grant — ISOCOSMOS (propuesta en curso)
-- Colaboraciones: Cernicharo, Oba, Nguyen, Kästner
+- Molecular Astrophysicist & Astrochemist
+
+
+[📄 Download CV (PDF)]({{ '/assets/CV.pdf' | relative_url }}){: .btn }
