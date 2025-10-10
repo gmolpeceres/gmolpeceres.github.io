@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minimal Academic Template</title>
+  <!-- Google Fonts: Japanese subtitle-style gothic -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1b1f24;
+      --muted: #6b7280;
+      --accent: #0ea5e9; /* sky-500 */
+      --border: #e5e7eb;
+      --card: #f8fafc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f13;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #38bdf8; /* sky-400 */
+        --border: #111827;
+        --card: #0f172a;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100dvh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      border-right: 1px solid var(--border);
+      padding: 24px 16px;
+      background: linear-gradient(180deg, var(--bg), var(--card));
+      position: sticky;
+      top: 0;
+      height: 100dvh;
+      overflow-y: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      background: color-mix(in oklab, var(--accent) 18%, transparent);
+      border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .title {
+      font-family: "Zen Kaku Gothic New", system-ui, sans-serif; /* Japanese subtitle feel */
+      font-size: 18px;
+      letter-spacing: 0.3px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+    }
+
+    nav {
+      margin-top: 16px;
+      display: grid;
+      gap: 6px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all .2s ease;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+    }
+
+    nav a .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border);
+      flex: 0 0 auto;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    nav a:hover { background: color-mix(in oklab, var(--accent) 6%, transparent); }
+    nav a:hover .dot { background: var(--accent); transform: scale(1.15); }
+    nav a.active { border-color: color-mix(in oklab, var(--accent) 50%, var(--border)); background: color-mix(in oklab, var(--accent) 10%, transparent); }
+    nav a.active .dot { background: var(--accent); }
+
+    .footer-note {
+      margin-top: 16px;
+      padding: 10px 12px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Main */
+    main { padding: 32px; }
+
+    .panel {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    h1, h2, h3 {
+      font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; color: var(--muted); font-weight: 600; }
+
+    .section { display: none; }
+    .section.active { display: block; animation: fade .25s ease; }
+
+    @keyframes fade { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    ul.clean { margin: 0; padding-left: 18px; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+      nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      main { padding: 20px; }
+      .panel { padding: 20px; border-radius: 16px; }
+      .grid.cols-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="badge">GM</div>
+        <div>
+          <h1 class="title">Germán Molpeceres</h1>
+          <p class="subtitle">Astrochemistry, Quantum Chemistry, ML</p>
+        </div>
+      </div>
+
+      <nav id="nav">
+        <a href="#intro" data-section="intro" class="active"><span class="dot"></span>Introducción</a>
+        <a href="#research" data-section="research"><span class="dot"></span>Research</a>
+        <a href="#cv" data-section="cv"><span class="dot"></span>CV</a>
+        <a href="#projects" data-section="projects"><span class="dot"></span>Ongoing Projects</a>
+        <a href="#codes" data-section="codes"><span class="dot"></span>Codes and Databases</a>
+      </nav>
+
+      <div class="footer-note">
+        Tip: edita el texto dentro de cada sección en <code>index.html</code>.
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+      <div class="panel">
+        <!-- Introducción -->
+        <section id="intro" class="section active">
+          <h1>Introducción</h1>
+          <p>
+            Bienvenido a mi sitio. Este es un tema minimalista con navegación lateral. La tipografía usa un estilo gótico japonés (Zen Kaku Gothic New) para títulos y pestañas, evocando el look de subtítulos japoneses de forma limpia y legible.
+          </p>
+          <div class="grid cols-2">
+            <div class="card">
+              <h2>Visión</h2>
+              <p>Investigo procesos físico-químicos en el medio interestelar, conectando modelos cuánticos, aprendizaje automático, y observaciones.</p>
+            </div>
+            <div class="card">
+              <h2>Noticias breves</h2>
+              <ul class="clean">
+                <li>[2025-10] Lanzamos el proyecto ISOCOSMOS.</li>
+                <li>[2025-09] Nuevo preprint sobre M⁺–C₆H.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research" class="section">
+          <h1>Research</h1>
+          <p>Áreas principales: química de hielos, reactividad en condiciones extremas, potenciales interatómicos con ML, y modelos de quimio-dinámica.</p>
+          <div class="grid cols-2">
+            <div class="card">
+              <h2>Hot cores y química compleja</h2>
+              <p>Del colapso gravitacional a núcleos calientes, formación de moléculas complejas, y rutas superficiales y en fase gas.</p>
+            </div>
+            <div class="card">
+              <h2>Potenciales con NNs</h2>
+              <p>Entrenamiento de ANI/SchNet, energías y fuerzas de alta fidelidad, e integración con i-PI para PIMD/RPMD.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CV -->
+        <section id="cv" class="section">
+          <h1>CV</h1>
+          <p>Descarga tu CV como PDF o lista breve de hitos.</p>
+          <div class="card">
+            <h2>Hitos</h2>
+            <ul class="clean">
+              <li>ERC Starting Grant — ISOCOSMOS (propuesta en curso).</li>
+              <li>Colaboraciones: Cernicharo, Oba, Nguyen, Kästner.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Ongoing Projects -->
+        <section id="projects" class="section">
+          <h1>Ongoing Projects</h1>
+          <div class="grid cols-2">
+            <div class="card">
+              <h2>Captura M⁺–C₆H</h2>
+              <p>MRCI, CCSD, tasas de asociación radiativa frente a eliminación de H, y relevancia astroquímica.</p>
+            </div>
+            <div class="card">
+              <h2>Suite de química de hielos</h2>
+              <p>Refactorización y acoplamiento de procesos superficie–volumen para simulaciones rápidas.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Codes and Databases -->
+        <section id="codes" class="section">
+          <h1>Codes and Databases</h1>
+          <div class="grid cols-2">
+            <div class="card">
+              <h2>Código</h2>
+              <ul class="clean">
+                <li>Modelos ANI mejorados para radicales.</li>
+                <li>Clasificador para inventarios moleculares.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h2>Datos</h2>
+              <ul class="clean">
+                <li>Conjuntos de referencia MRCI/CCSD.</li>
+                <li>Bases de datos de reacciones en hielo.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Small script to handle navigation & default section
+    const nav = document.getElementById('nav');
+    const links = Array.from(nav.querySelectorAll('a'));
+    const sections = Array.from(document.querySelectorAll('.section'));
+
+    function show(id) {
+      sections.forEach(s => s.classList.toggle('active', s.id === id));
+      links.forEach(a => a.classList.toggle('active', a.dataset.section === id));
+      // keep hash in URL without jumping
+      if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+    }
+
+    // If no hash, default to intro
+    if (!location.hash) {
+      show('intro');
+    } else {
+      const id = location.hash.replace('#','');
+      if (document.getElementById(id)) show(id);
+    }
+
+    nav.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      e.preventDefault();
+      show(a.dataset.section);
+    });
+  </script>
+</body>
+</html>
