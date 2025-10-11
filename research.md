@@ -6,10 +6,11 @@ permalink: "/research/"
 
 # Research
 
-Áreas: química de hielos, reactividad en condiciones extremas, potenciales interatómicos con ML, y modelos de quimio-dinámica.
+## Surface processes in astrochemistry
 
-## Hot cores y química compleja
-Del colapso gravitacional a núcleos calientes, formación de moléculas complejas, y rutas superficiales y en fase gas.
+Surface chemistry plays a crucial role in the formation of complex molecules in space.  
+My work explores atom and radical interactions on icy dust grains using quantum simulations  
+and machine learning potentials.
 
-## Potenciales con NNs
-Entrenamiento de ANI/SchNet, energías y fuerzas de alta fidelidad, e integración con i-PI para PIMD/RPMD.
+![Surface processes on interstellar ices]({{ '/assets/img/surface_processes.jpg' | relative_url }}){: .img-right }
+
