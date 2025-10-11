@@ -14,3 +14,12 @@ and machine learning potentials.
 
 ![Surface processes on interstellar ices]({{ '/assets/img/surface_processes.jpg' | relative_url }}){: .img-right }
 
+--- 
+
+## Interstellar isomerism
+
+![Isomerism in interstellar molecules]({{ 'surface_processes.jpg' | relative_url }}){: .img-left }
+
+Understanding how molecular isomers form and interconvert under astrophysical conditions  
+provides insights into the chemical diversity observed in star-forming regions.  
+I investigate these mechanisms with high-level *ab initio* methods and kinetic models.
