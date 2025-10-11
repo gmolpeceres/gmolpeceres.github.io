@@ -8,10 +8,9 @@ permalink: "/research/"
 
 ## Surface processes in astrochemistry
 
-
 ![Surface processes on interstellar ices]({{ '/assets/img/surface_processes.jpg' | relative_url }}){: .img-right }
 
-Surface chemistry plays a crucial role in the formation of complex molecules in space.
+Chances are, if you know me, you have seen this figure elsewhere! Surface chemistry plays a crucial role in the formation of complex molecules in space.
 My work explores atom and radical interactions on icy dust grains using quantum simulations
 and machine learning potentials.
 
