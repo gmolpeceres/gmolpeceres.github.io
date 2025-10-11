@@ -154,32 +154,39 @@ h2 { font-size: 20px; color: var(--muted); font-weight: 600; }
 }
 
 /* ---- Research images ---- */
-img.img-right, img.img-left {
+/* --- Images floated next to text (research page style) --- */
+img.img-right,
+img.img-left {
   max-width: 40%;
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  margin: 8px 0 16px 0;
+  margin: 4px 0 12px 0;
+  vertical-align: top;
 }
 
 img.img-right {
   float: right;
   margin-left: 20px;
+  margin-top: 4px; /* reduce top margin so it aligns with first text line */
 }
 
 img.img-left {
   float: left;
   margin-right: 20px;
+  margin-top: 4px;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  opacity: 0.5;
-  margin: 40px 0;
-}
-
-/* Clear floats for the next section */
-h2 {
+/* ensures next headings clear the float */
+h2, h3 {
   clear: both;
+}
+
+/* optional: for better alignment on small screens */
+@media (max-width: 820px) {
+  img.img-right, img.img-left {
+    float: none;
+    max-width: 100%;
+    margin: 12px 0;
+  }
 }
