@@ -1,13 +1,15 @@
 ---
 layout: default
-title: "Ongoing Projects"
+title: "The ISOCOSMOS project"
 permalink: "/projects/"
 ---
 
 # Ongoing Projects
 
-## Captura M⁺–C₆H
-MRCI, CCSD, tasas de asociación radiativa frente a eliminación de H, y relevancia astroquímica.
+- RyC
+- Atraccion
 
-## Suite de química de hielos
-Refactorización y acoplamiento de procesos superficie–volumen para simulaciones rápidas.
+# Forthcoming
+
+- ISOCOSMOS
+- QFINDER
