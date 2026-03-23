@@ -8,7 +8,7 @@ permalink: "/research/"
 
 ## Surface processes in astrochemistry
 
-<figure class="research-figure research-figure-right">
+<figure class="research-figure-right">
   <img src="{{ '/assets/img/surface_processes.png' | relative_url }}" alt="Surface processes on interstellar ices">
   <figcaption>Surface processes on interstellar ices.</figcaption>
 </figure>
