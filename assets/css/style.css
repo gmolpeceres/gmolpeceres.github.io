@@ -179,7 +179,7 @@ h2 { font-size: 20px; color: var(--muted); font-weight: 600; }
 
 .research-figure-right {
   float: right;
-  width: min(26%, 220px);
+  width: max(26%, 220px);
   margin: 0 0 10px 18px;
   clear: right;
 }
