@@ -6,7 +6,8 @@ permalink: "/team/"
 
 # Current members of the team
 
-Information about the ISOCOSMOS project will be available here.
+## German Molpeceres
+
 
 # Past members of the team
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codes and Databases</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="badge">GM</div>
+        <div>
+          <h1 class="title">Germán Molpeceres</h1>
+          <p class="subtitle">Molecular Astrophysics, Astrochemistry</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        
+          
+          
+          <a class="nav-link" href="/">
+            <span class="dot"></span>Overview
+          </a>
+        
+          
+          
+          <a class="nav-link" href="/team/">
+            <span class="dot"></span>Team
+          </a>
+        
+          
+          
+          <a class="nav-link" href="/research/">
+            <span class="dot"></span>Research Lines
+          </a>
+        
+          
+          
+          <a class="nav-link" href="/cv/">
+            <span class="dot"></span>CV
+          </a>
+        
+          
+          
+          <a class="nav-link" href="/isocosmos/">
+            <span class="dot"></span>ISOCOSMOS
+          </a>
+        
+          
+          
+          <a class="nav-link active" href="/codes/">
+            <span class="dot"></span>Codes and Databases
+          </a>
+        
+      </nav>
+
+      <div class="footer-note">
+        Actualizado: 2026-03-23
+      </div>
+    </aside>
+
+    <main>
+      <div class="panel">
+        <article class="content">
+          <h1 id="codes-and-databases">Codes and Databases</h1>
+
+<p>This page gathers the training datasets, benchmarks, and model of my publications.</p>
+
+<hr />
+
+<h2 id="-machine-learning-potentials">🧠 Machine Learning Potentials</h2>
+
+<h3 id="-aiqm2--δ-learning-datasets">🔹 AIQM2 / Δ-learning datasets</h3>
+
+<p><strong>Dataset:</strong> CO₂ on water clusters<br />
+<strong>Description:</strong> Configurations sampled from ab initio MD and optimized at MP2/TZ level for benchmarking Δ-learning corrections to AIQM2.<br />
+<strong>Zenodo DOI:</strong> <a href="https://doi.org/10.5281/zenodo.XXXXXXX">10.5281/zenodo.XXXXXXX</a></p>
+
+<p><strong>Files included:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">co2_water_clusters.xyz</code> (training geometries)</li>
+  <li><code class="language-plaintext highlighter-rouge">co2_water_energies.csv</code> (reference energies, ΔE wrt AIQM2)</li>
+  <li><code class="language-plaintext highlighter-rouge">split_indices.json</code> (train/validation/test indices)</li>
+</ul>
+
+<hr />
+
+<h3 id="-hoco-potential-ml-extension">🔹 H₂O–CO₂ potential (ML extension)</h3>
+
+<p><strong>Dataset:</strong> Combined dataset of CO₂ adsorption and diffusion on amorphous water ice surfaces.<br />
+<strong>Zenodo DOI:</strong> <a href="https://doi.org/10.5281/zenodo.YYYYYYY">10.5281/zenodo.YYYYYYY</a></p>
+
+<p><strong>Content overview:</strong><br />
+| File | Description |
+|——|————–|
+| <code class="language-plaintext highlighter-rouge">train_set.xyz</code> | Training configurations |
+| <code class="language-plaintext highlighter-rouge">test_set.xyz</code> | Independent validation |
+| <code class="language-plaintext highlighter-rouge">forces.csv</code> | Reference gradients (CCSD(T)/TZ) |</p>
+
+<hr />
+
+<h3 id="-transfer-learning-examples">🔹 Transfer learning examples</h3>
+
+<p><strong>Model:</strong> SchNet + Q (charged species adaptation)<br />
+<strong>Zenodo DOI:</strong> <a href="https://doi.org/10.5281/zenodo.ZZZZZZZ">10.5281/zenodo.ZZZZZZZ</a></p>
+
+<blockquote>
+  <p>Includes model weights, normalization parameters, and test scripts for use with i-PI and ASE.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-repository-links">📦 Repository Links</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🧩 GitHub — Model Training</td>
+      <td>Python scripts and workflows for Δ-learning setup</td>
+      <td><a href="https://github.com/username/aiqm2-delta">github.com/username/aiqm2-delta</a></td>
+    </tr>
+    <tr>
+      <td>🧬 GitHub — Utilities</td>
+      <td>Scripts for sampling and dataset preparation</td>
+      <td><a href="https://github.com/username/ice-tools">github.com/username/ice-tools</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-citation">📘 Citation</h2>
+<p>If you use any of these datasets, please cite the corresponding Zenodo DOI and the associated publication</p>
+
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
