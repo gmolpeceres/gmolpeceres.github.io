@@ -11,7 +11,7 @@ permalink: "/research/"
 <div class="research-block">
   <div class="research-text">
     <p>
-      Chances are, if you know me, you have seen this figure elsewhere. Surface chemistry plays a crucial role in the formation of complex molecules in space. My work explores atom and radical interactions on icy dust grains using quantum simulations and machine learning potentials.
+      We investigate the chemistry happening on the surface of icy covered interstellar dust grains using a combination of quantum chemical calculations and machine learning techniques. We investigate 
     </p>
   </div>
 
@@ -20,3 +20,20 @@ permalink: "/research/"
     <figcaption>Surface processes on interstellar ices.</figcaption>
   </figure>
 </div>
+
+## Gas phase astrochemistry
+
+<div class="research-block figure-left">
+  <div class="research-text">
+    <p>
+      We investigate the chemistry happening on the surface of icy covered interstellar dust grains using a combination of quantum chemical calculations and machine learning techniques. We investigate 
+    </p>
+  </div>
+
+  <figure class="research-figure">
+    <img src="{{ '/assets/img/automatic.png' | relative_url }}" alt="Surface processes on interstellar ices">
+    <figcaption>Surface processes on interstellar ices.</figcaption>
+  </figure>
+</div>
+
+## Kinetic Models
